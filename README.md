@@ -23,3 +23,19 @@ A lightweight background agent that continuously tracks your work activity, gene
 ---
 
 ## Project Structure
+CRAS/
+├── main.py
+├── config.yaml
+├── requirements.txt
+├── viewer.py
+├── install.ps1
+├── uninstall.ps1
+├── extension/               # Browser extension
+│   ├── manifest.json
+│   └── background.js
+└── tracker/
+├── activity.py
+├── document.py
+├── cloud.py
+├── pause.py
+└── browser_receiver.py
