@@ -7,3 +7,13 @@ cloud_sync_interval_minutes: 15        # How often to try uploading (for later)
 
 # Pause settings
 enable_pause: true
+max_snapshots_in_memory: 0          # 0 = unlimited (we will use disk)
+
+
+cloud:
+  enabled: true
+  rclone_path: "C:/Users/Asus/AppData/Local/Microsoft/WinGet/Packages/Rclone.Rclone_Microsoft.Winget.Source_8wekyb3d8bbwe/rclone-v1.75.1-windows-amd64/rclone.exe"
+  remote: "gdrive"
+  remote_folder: "ActivityLogs"
+  sync_interval_minutes: 15
+  retry_count: 3
