@@ -1,0 +1,6 @@
+psutil
+pynput
+pyyaml
+python-dotenv
+requests
+streamlit

@@ -1,0 +1,9 @@
+# Activity Tracker Configuration
+
+snapshot_interval_seconds: 10          # How often to take a snapshot
+idle_threshold_seconds: 60             # After how many seconds of no activity → consider idle
+log_folder: "logs"                     # Where daily logs are saved
+cloud_sync_interval_minutes: 15        # How often to try uploading (for later)
+
+# Pause settings
+enable_pause: true
