@@ -27,10 +27,9 @@ def main():
     idle_threshold = config.get("idle_threshold_seconds", 60)
     log_folder = config.get("log_folder", "logs")
 
-    # Cloud interval (supports both old and new config style)
+    # Cloud interval
     cloud_cfg = config.get("cloud", {})
-    sync_every = cloud_cfg.get("sync_interval_minutes",
-                               config.get("cloud_sync_interval_minutes", 15)) * 60
+    sync_every = cloud_cfg.get("sync_interval_minutes", 15) * 60
 
     # ---------- Initialize components ----------
     tracker = ActivityTracker(idle_threshold=idle_threshold)
@@ -104,7 +103,6 @@ def main():
 
     except KeyboardInterrupt:
         print("\n\nStopping CRAS...")
-        # Final sync
         print(cloud.sync())
         tracker.stop()
         pause_manager.stop()

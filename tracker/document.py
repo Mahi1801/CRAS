@@ -3,6 +3,7 @@ from collections import defaultdict
 import os
 import json
 
+
 class DocumentGenerator:
     def __init__(self, log_folder="logs", snapshot_interval=10):
         self.log_folder = log_folder
@@ -99,4 +100,9 @@ class DocumentGenerator:
                 status = s.get("status", "")
                 app = s.get("app", "")
                 title = s.get("title", "")
-                f.write(f"- **{ts}** | {status} | `{app}` → {title}\n")
+                clicks = s.get("clicks", 0)
+                keys = s.get("keys", 0)
+                extra = ""
+                if "browser_url" in s:
+                    extra = f" | {s.get('browser_url', '')}"
+                f.write(f"- **{ts}** | {status} | `{app}` → {title} (C:{clicks} K:{keys}){extra}\n")

@@ -3,6 +3,7 @@ import subprocess
 import time
 from datetime import datetime
 
+
 class CloudSync:
     def __init__(self, config: dict = None):
         config = config or {}
